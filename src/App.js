@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Body from "./Components/Body"
 
 function App() {
   return (
-    <div className="text-3xl font-bold text-green-500">
-      <h1>Lets Start Building </h1>
+    <div>
+      <Body/>
     </div>
   );
 }
