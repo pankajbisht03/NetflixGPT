@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import MovieTitle from "./MovieTitle";
-import MovieBackGround from "./MovieBackGround"
+import MovieBackGround from "./MovieBackGround";
+import MoviesList from "./MoviesList"
+import SecondaryMovieContainer from "./SecondaryMovieContainer"
 
 function MainMovieContainer () {
     const movies = useSelector((store) => store.movies?.nowPlayingMovies);
@@ -12,6 +14,7 @@ function MainMovieContainer () {
         <div>
             <MovieTitle title = {original_title} overview={overview}/>
             <MovieBackGround movieId = {id}/>
+            <SecondaryMovieContainer/>
             {/* {
                 MovieTitle Component
                 MovieBackGround Component
