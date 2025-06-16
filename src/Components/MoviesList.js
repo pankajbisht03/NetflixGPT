@@ -10,9 +10,7 @@ function MoviesList({ title, movies }) {
                 <div className="flex">
                     {movies?.map((mov) => (
                         <MoviesCard key={mov.id} title={"Now Playing"} posterImg={mov.poster_path} />
-
                     ))}
-
                 </div>
             </div>
         </div>

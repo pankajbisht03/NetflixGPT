@@ -15,6 +15,7 @@ function MainMovieContainer () {
             <MovieTitle title = {original_title} overview={overview}/>
             <MovieBackGround movieId = {id}/>
             <SecondaryMovieContainer/>
+            {/* <SecondaryMovieContainer/> */}
             {/* {
                 MovieTitle Component
                 MovieBackGround Component

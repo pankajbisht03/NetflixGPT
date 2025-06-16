@@ -7,6 +7,7 @@ import { LOGO, USER_LOGO } from "../utils/constants"
 import { onAuthStateChanged } from "firebase/auth"
 import { useDispatch } from "react-redux"
 import { addUser, removeUser } from "../utils/userSlice"
+import {toggleGptState} from "../utils/gptSlice"
 function Header() {
     const user = useSelector((store) => store.user);;
     const movies = useSelector((store) => store.movies)
@@ -42,12 +43,16 @@ function Header() {
             console.log(error)
             // An error happened.
         });
+    }
 
+    function toggleGptClick(){
+        dispatch(toggleGptState)
     }
     return <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
         <img className="w-44" src={LOGO}
             alt="logo" />
         {user && <div className="flex py-2">
+            <button className="px-2 mx-2 py-2 bg-purple-800 text-white rounded-lg" onClick={toggleGptClick}>GPT Search</button>
             <img alt="user-logo" className="w-10 h-10" src={USER_LOGO} />
             <button className="text-white font-bold" onClick={handleSignOut}>Sign Out</button>
         </div>}
