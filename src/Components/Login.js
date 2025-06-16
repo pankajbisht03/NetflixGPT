@@ -34,18 +34,18 @@ const Login = ({ form, setForm }) => {
                     // Signed up 
                     const user = userCredential.user;
                     // UPDATING A USER
-                    // updateProfile(user, {
-                    //     displayName: form.user.name
-                    // }).then(() => {
-                    //     //extracting these details from auth.currrentUser
-                    //     const { uid, displayName, email } = auth.currentUser
-                    //     dispatch(addUser({ uid: uid, displayName: displayName, email: email }))
-                    //     // Profile updated!
-                    //     // ...
-                    // }).catch((error) => {
-                    //     // An error occurred
-                    //     // ...
-                    // })
+                    updateProfile(user, {
+                        displayName: form.user.name
+                    }).then(() => {
+                        //extracting these details from auth.currrentUser
+                        const { uid, displayName, email } = auth.currentUser
+                        dispatch(addUser({ uid: uid, displayName: displayName, email: email }))
+                        // Profile updated!
+                        // ...
+                    }).catch((error) => {
+                        // An error occurred
+                        // ...
+                    })
 
                     // ...
                 })
