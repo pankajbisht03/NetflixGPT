@@ -2,7 +2,6 @@ import MoviesCard from "./MoviesCard"
 function MoviesList({ title, movies }) {
     console.log(movies, "movies")
 
-
     return (
         movies && (<div className="px-6 py-4">
             <h1 className="text-3xl text-white py-4">{title}</h1>

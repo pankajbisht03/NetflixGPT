@@ -10,7 +10,8 @@ export const API_OPTIONS = {
     },
   } 
 
-  export const IMG_PATH_URL = "https://image.tmdb.org/t/p/w500/"
-
+  export const IMG_PATH_URL = "https://image.tmdb.org/t/p/w500/";
+  export const WORKING_AI_KEY = "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"
+  export const OPEN_AI_KEY = "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"
 // 6f0e4bdd68ad493b2513bdc1fa2e6f9c api key
 // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjBlNGJkZDY4YWQ0OTNiMjUxM2JkYzFmYTJlNmY5YyIsIm5iZiI6MTc1MDA1NDIyNy4xNTUsInN1YiI6IjY4NGZiNTUzZDY2OTIzNWRlMGJiNTUyNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4-7HhOanje0NiGnzBcZAf6Db4DscDDYOFJ-OzZ9a288
