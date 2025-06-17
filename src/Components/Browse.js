@@ -6,6 +6,8 @@ import usePoularMovies from "../customHooks/usePopularMovies";
 import useTopRatedMovies from "../customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/useUpcomingMovies";
 import usePopularShows from "../customHooks/usePopularShow";
+import SecondaryMovieContainer from "./SecondaryMovieContainer"
+import GptSearchContainer from "./GptSearchContainer"
 
 function Browse() {
     useFetchNowPlayingMovies();
@@ -14,11 +16,18 @@ function Browse() {
     useUpcomingMovies()
     usePopularShows()
     const nowPlaying  = useSelector((store) => store.movies);
-    console.log(nowPlaying, "nowww")
+    const showGptButton = useSelector((store) => store.gpt?.showGpt)
+    console.log(showGptButton, "nowww")
     
     return (<div>
         <Header />
+        {showGptButton ? <GptSearchContainer/> :
+        <>
         <MainMovieContainer/>
+        <SecondaryMovieContainer/>
+        </>
+        }
+        
         {/* {
             Movies Container
                 - Title, Description

@@ -14,7 +14,7 @@ function MainMovieContainer () {
         <div>
             <MovieTitle title = {original_title} overview={overview}/>
             <MovieBackGround movieId = {id}/>
-            <SecondaryMovieContainer/>
+            {/* <SecondaryMovieContainer/> */}
             {/* <SecondaryMovieContainer/> */}
             {/* {
                 MovieTitle Component
