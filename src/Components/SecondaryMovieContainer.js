@@ -9,11 +9,10 @@ function SecondaryMovieContainer() {
         movies.nowPlayingMovies && (<div className="bg-black">
             <div className="-mt-52 relative z-20 pl-6">
                 <MoviesList title="Now Playing" movies={movies.nowPlayingMovies} />
-                <MoviesList title="Most Popular" movies={movies.popularMovies} />
                 <MoviesList title="Top Rated" movies={movies.topRatedMovies} />
                 <MoviesList title="Up Coming" movies={movies.upComingMovies} />
                 <MoviesList title="Popular Shows" movies={movies.popularShows} />
-
+                <MoviesList title="Most Popular" movies={movies.popularMovies} />
             </div>
 
         </div>)

@@ -53,9 +53,9 @@ function Header() {
         <img className="w-44" src={LOGO}
             alt="logo" />
         {user && <div className="flex py-2">
-            <button className="px-2 mx-2 py-2 my-2 bg-purple-800 text-white rounded-lg" onClick={toggleGptClick}>{!gptButtonState ? "GPT Search": "Homepage"}</button>
-            <img alt="user-logo" className="w-10 h-10" src={USER_LOGO} />
-            <button className="text-white font-bold" onClick={handleSignOut}>Sign Out</button>
+            <button className="px-2 mx-2 py-2 my-2 bg-purple-800 text-white font-bold rounded-lg" onClick={toggleGptClick}>{!gptButtonState ? "GPT Search": "Homepage"}</button>
+            <img alt="user-logo" className="mx-2 my-2 w-10 h-10" src={USER_LOGO} />
+            <button className="px-2 mx-2 my-2 text-white bg-red-800 font-bold rounded-lg" onClick={handleSignOut}>Sign Out</button>
         </div>}
     </div>
 }

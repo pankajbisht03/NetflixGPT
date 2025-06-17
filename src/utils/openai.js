@@ -1,8 +1,8 @@
 import OpenAI from 'openai';
-import { OPEN_AI_KEY,WORKING_AI_KEY } from './constants';
+import { OPENAI_KEY } from './constants';
 // configuring openai
 const openAi = new OpenAI({
-  apiKey: WORKING_AI_KEY,
+  apiKey: OPENAI_KEY,
   dangerouslyAllowBrowser: true //gives an error cause we are calling the api from browser like environment and key can be compromised.
 });
 
