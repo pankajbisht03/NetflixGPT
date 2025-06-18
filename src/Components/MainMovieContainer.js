@@ -9,9 +9,8 @@ function MainMovieContainer () {
     if(!movies) return
     const oneMovie = movies[0]
     const {original_title, overview, id} = oneMovie
-    console.log(oneMovie, "oneMovie")
     return (
-        <div>
+        <div className="pt-[35%] bg-black md:pt-0">
             <MovieTitle title = {original_title} overview={overview}/>
             <MovieBackGround movieId = {id}/>
             {/* <SecondaryMovieContainer/> */}

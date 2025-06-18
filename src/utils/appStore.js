@@ -10,7 +10,4 @@ const appStore = configureStore({
         gpt:gptSlice,
     }
 })
-
-console.log(appStore.getState(), "store");
-
 export default appStore

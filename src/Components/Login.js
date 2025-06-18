@@ -72,10 +72,12 @@ const Login = ({ form, setForm }) => {
         <div>
             <Header />
             <div className="absolute">
-                <img src={BACKGROUND_IMAGE}
+                <img 
+                    className="h-screen object-cover md:h-auto md:object-none"
+                    src={BACKGROUND_IMAGE}
                     alt="background" />
             </div>
-            <form className="w-3/12 absolute bg-black text-white p-8 my-36 mx-auto right-0 left-0 bg-opacity-80 rounded-lg">
+            <form className="w-full md:w-3/12 absolute bg-black text-white p-8 my-36 mx-auto right-0 left-0 bg-opacity-80 rounded-lg">
 
                 <h1 className="p-4 font-bold text-3xl text-white">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
                 {!isSignInForm && <input className="p-3 my-4 w-full bg-gray-700 rounded-lg text-black" type="text" name="name" placeholder="Name" value={form.name} onChange={(e) => handleForm(e)} />}

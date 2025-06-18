@@ -4,11 +4,14 @@ const moviesSlice = createSlice({
     name:"movies",
     initialState:{
         nowPlayingMovies:null,
-        movieTrailer:null
+        movieTrailer:null,
+        popularMovies:null,
+        topRatedMovies:null,
+        upComingMovies:null,
+        popularShows:null
     },
     reducers: {
         addNowPlayingMovies: (state, action) => {
-            console.log("Reducer called with:", action.payload)
             state.nowPlayingMovies=  action.payload
         },
         addMovieTrailer:(state, action) => {
@@ -25,7 +28,6 @@ const moviesSlice = createSlice({
             state.upComingMovies = action.payload
         },
         addPopularShows:(state, action) => {
-            console.log("action dispatched for shows")
             state.popularShows = action.paylod
         }
 

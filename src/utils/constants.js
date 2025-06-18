@@ -5,11 +5,11 @@ export const USER_LOGO="https://occ-0-3647-3646.1.nflxso.net/dnm/api/v6/vN7bi_My
 export const API_OPTIONS = {
     method: "GET",
     headers: {
-      Authorization: "Bearer" + process.env.REACT_APP_TMD_KEY,
+      Authorization: "Bearer " + process.env.REACT_APP_TMD_KEY,
       accept: "application/json",
     },
   } 
-   export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+  export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
   export const IMG_PATH_URL = "https://image.tmdb.org/t/p/w500/";
 // 6f0e4bdd68ad493b2513bdc1fa2e6f9c api key
 // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjBlNGJkZDY4YWQ0OTNiMjUxM2JkYzFmYTJlNmY5YyIsIm5iZiI6MTc1MDA1NDIyNy4xNTUsInN1YiI6IjY4NGZiNTUzZDY2OTIzNWRlMGJiNTUyNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4-7HhOanje0NiGnzBcZAf6Db4DscDDYOFJ-OzZ9a288

@@ -14,7 +14,7 @@ function MovieBackground({ movieId }) {
                 referrerpolicy="strict-origin-when-cross-origin"
                 >
 
-            </iframe>
+            </iframe>        
 
         </div>
     )

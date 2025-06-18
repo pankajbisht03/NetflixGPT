@@ -7,7 +7,8 @@ import useTopRatedMovies from "../customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/useUpcomingMovies";
 import usePopularShows from "../customHooks/usePopularShow";
 import SecondaryMovieContainer from "./SecondaryMovieContainer"
-import GptSearchContainer from "./GptSearchContainer"
+import {lazy} from "react";
+const OnDemandGptComponent = lazy (() => import("./GptSearchContainer"))
 
 function Browse() {
     useFetchNowPlayingMovies();
@@ -15,13 +16,11 @@ function Browse() {
     useTopRatedMovies()
     useUpcomingMovies()
     usePopularShows()
-    const nowPlaying  = useSelector((store) => store.movies);
     const showGptButton = useSelector((store) => store.gpt?.showGpt)
-    console.log(showGptButton, "nowww")
     
     return (<div>
         <Header />
-        {showGptButton ? <GptSearchContainer/> :
+        {showGptButton ? <OnDemandGptComponent/> :
         <>
         <MainMovieContainer/>
         <SecondaryMovieContainer/>

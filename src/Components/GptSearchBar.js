@@ -27,18 +27,16 @@ function GptSearchBar() {
                 { role: 'user', content: gptQuery },
             ],
         });
-        console.log(gptResults.choices, "funny retro");
         const gptMovieResults = gptResults?.choices[0]?.message?.content.split(",");
         //map will not wait for results its executes all the code and provides us promise
        const promiseArray =  gptMovieResults.map((movie) => searchMovieTmdb(movie));
        const tmdbResults = await Promise.all(promiseArray)
-       console.log(promiseArray, tmdbResults, "promise")
        dispatch(addGptMovies({movieNames:gptMovieResults, tmdbResults:tmdbResults}))
     }
     
     return (
-        <div className="pt-[10%] flex justify-center">
-            <form className="w-1/2 bg-black grid grid-cols-12  rounded-lg">
+        <div className="pt-[45%] md:pt-[10%] flex justify-center">
+            <form className="w-full md:w-1/2 bg-black grid grid-cols-12  rounded-lg">
                 <input type="text" ref={searchText} className="p-4 m-4 col-span-9 rounded-lg" ></input>
                 <button className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white font-bold rounded-lg" onClick={handleAdvanceSearch}>Search</button>
             </form>
