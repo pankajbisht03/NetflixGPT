@@ -7,6 +7,7 @@ function MainMovieContainer() {
     if (!movies) return
     const oneMovie = movies[0]
     const { original_title, overview, id } = oneMovie
+    
     return (
         <div className="pt-[35%] bg-black md:pt-0">
             <MovieTitle title={original_title} overview={overview} />
