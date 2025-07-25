@@ -4,7 +4,7 @@ import { API_OPTIONS } from "../utils/constants";
 import { addGptMovies } from "../utils/gptSlice";
 import openAi from "../utils/openai";
 
-function GptSearchBar() {
+function GptSearchBar({loading, setLoading}) {
     const dispatch = useDispatch()
     const searchText = useRef(null);
     //search movie in TMDB 
@@ -14,24 +14,33 @@ function GptSearchBar() {
         return json?.results
 
     }
-    async function handleAdvanceSearch(e) {       
+    async function handleAdvanceSearch(e) {  
+        setLoading(true)    
         e.preventDefault();
-        const gptQuery = "Act as a movie recommendation system and suggest some results for the query:"
-        + searchText.current?.value +
-        "Only give name of 5 movies, comma separated like the example result given ahead. Example Result: Don, Golmaal, Phir Hera Pheri, Dhol, Andaz Apna Apna"
-
-        // openai chat apis give results as a promise and have to make my function async
-        const gptResults = await openAi.chat.completions.create({
-            model: 'gpt-3.5-turbo',
-            messages: [
-                { role: 'user', content: gptQuery },
-            ],
-        });
-        const gptMovieResults = gptResults?.choices[0]?.message?.content.split(",");
-        //map will not wait for results its executes all the code and provides us promise
-       const promiseArray =  gptMovieResults.map((movie) => searchMovieTmdb(movie));
-       const tmdbResults = await Promise.all(promiseArray)
-       dispatch(addGptMovies({movieNames:gptMovieResults, tmdbResults:tmdbResults}))
+        try{
+            const gptQuery = "Act as a movie recommendation system and suggest some results for the query:"
+            + searchText.current?.value +
+            "Only give name of 5 movies, comma separated like the example result given ahead. Example Result: Don, Golmaal, Phir Hera Pheri, Dhol, Andaz Apna Apna"
+    
+            // openai chat apis give results as a promise and have to make my function async
+            const gptResults = await openAi.chat.completions.create({
+                model: 'gpt-3.5-turbo',
+                messages: [
+                    { role: 'user', content: gptQuery },
+                ],
+            });
+            const gptMovieResults = gptResults?.choices[0]?.message?.content.split(",");
+            //map will not wait for results its executes all the code and provides us promise
+           const promiseArray =  gptMovieResults.map((movie) => searchMovieTmdb(movie));
+           const tmdbResults = await Promise.all(promiseArray)
+           dispatch(addGptMovies({movieNames:gptMovieResults, tmdbResults:tmdbResults}))
+            
+        } catch(err){
+            console.error("Error in Searching Movies:", err);
+        }
+        finally{
+            setLoading(false)
+        }
     }
     
     return (
