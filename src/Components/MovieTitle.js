@@ -8,9 +8,7 @@ function MovieTitle ({title, overview}) {
                 <button className="bg-white text-black py-1 md:my-0 md:py-4 px-3 md:px-8 md:h-14 text-xl rounded-lg hover:bg-opacity-80">Play ▶</button>
                 <button className="hidden md:inline-block mx-2 bg-gray-500 text-white  h-14 px-8 text-xl bg-opacity-50 rounded-lg hover:bg-opacity-80">More Info</button>
             </div>
-
             </div>
-
         </div>
     )
 }
