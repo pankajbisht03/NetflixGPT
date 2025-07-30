@@ -35,11 +35,12 @@ const Login = ({ form, setForm }) => {
                     const user = userCredential.user;
                     // UPDATING A USER
                     updateProfile(user, {
-                        displayName: form.user.name
+                        displayName: form.name
                     }).then(() => {
                         //extracting these details from auth.currrentUser
                         const { uid, displayName, email } = auth.currentUser
-                        dispatch(addUser({ uid: uid, displayName: displayName, email: email }))
+                        dispatch(addUser({ uid: uid, displayName: displayName, email: email }));
+                        navigate("/browse")
                         // Profile updated!
                         // ...
                     }).catch((error) => {
