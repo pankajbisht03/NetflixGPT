@@ -15,5 +15,6 @@ function useTopRatedMovies(){
     useEffect(() => {
        !topRatedMovies &&  fethTopRatedMovies()
     },[])
+    
 }
 export default useTopRatedMovies
