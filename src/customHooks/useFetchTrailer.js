@@ -16,7 +16,6 @@ function useFetchTrailer (movieId) {
     }
     useEffect(() => {
         !movieTrailer &&  fetchTrailerVideo()
-    
     }, [])
 }
 
