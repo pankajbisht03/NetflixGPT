@@ -16,4 +16,5 @@ function usePopularShows(){
        !popularShows &&  fetchPopularShows()
     },[])
 }
+
 export default usePopularShows
