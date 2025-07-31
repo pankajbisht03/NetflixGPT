@@ -21,7 +21,6 @@ function useFetchNowPlayingMovies() {
     useEffect(() => {
         if(!nowPlayingMovies) fetchNowPlayingMovies()
     }, [])
-
 }
 
 export default useFetchNowPlayingMovies
