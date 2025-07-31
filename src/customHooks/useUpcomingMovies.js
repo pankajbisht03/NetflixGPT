@@ -16,4 +16,5 @@ function useUpcomingMovies(){
        !upComingMovies && fetchUpcomingMovies()
     },[])
 }
+
 export default useUpcomingMovies
